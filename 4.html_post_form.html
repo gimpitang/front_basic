@@ -1,0 +1,40 @@
+<!-- 글쓰기 form -->
+<!-- 제목, 내용입력(사이즈 넉넉하게), 예약여부(yes or no -radio), 예약 등록시간 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-글쓰기</title>
+</head>
+<body background="images/카리나브이.jpeg">
+    <h2 style="color: aqua;">글쓰기 page</h2>
+    <form action="https://naver.com" method="post" enctype="multipart/form-data">
+    <div>
+        <label style="color: aqua;"><b>제목</b></label>
+        <textarea name="title" rows="1" cols="40" placeholder="제목을 입력하세요."> </textarea>
+    </div>
+    <div>
+        <label style="color: aqua;"><b>본문</b></label> <br>
+        <textarea name="contents" rows="30" cols="60" placeholder="내용을 입력하세요."></textarea>        
+    </div>
+    <div>
+        <label style="color: aqua;">예약여부</label>
+        <input type="radio" name="reservation" value="booked">예약함
+        <input type="radio" name="reservation" value="nah">예약안함
+    </div>
+    <div>
+        <label style="color: aqua;">예약 등록 시간간</label>
+        <input type="datetime-local" name="reservationTime">
+    </div>
+    <br><br><br>
+    <div>
+        <input type="submit" value="게시글 등록" >
+    </div>
+
+
+
+    
+</body>
+</html>

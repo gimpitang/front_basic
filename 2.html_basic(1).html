@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML BASIC1</title>
+</head>
+<!-- <body style="background-color: red;"> -->
+<body background="images/카리나브이.jpeg">
+<!-- <body> -->
+    <h2> 글자 styling 예제</h2>
+    <p style="background-color: red;">1.배경색 변경</p>
+    <p style="color: blue;">2. 글자색 변경</p>
+    <p style="font-size: 20px;">3. 글자 크기 변경</p>
+    <p style="color: green; font-size: 25px;text-align: center;">4. 복합 스타일링</p>
+
+    <h2>link와 이미지 삽입</h2>
+    <div>
+    
+    <!-- _blank는 새탭에서 열기 -->
+    <!-- a태그는 줄바꿈이 없는 태그다 -->
+    <a href="https://naver.com" target="_blank">네이버</a>
+    </div>
+    <div>    
+    <a href="https://naver.com" target="_blank">
+        <img src="images/카리나짱.jpeg" width="200px" height="300px" style="border: 3px solid black; ;" alt="">
+    </a>
+    </div>
+    <div>    
+        <a href="https://naver.com" target="_blank">
+            <!-- alt: 이미지가 깨졌을 때 대체문자열, 시각장애인용 리더기에서 읽을 수 있도록 사진에 대한 설명을 텍스트로 넣을 수 있음 -->
+            <img src="https://search.pstatic.net/sunny/?src=http%3A%2F%2Ffile3.instiz.net%2Fdata%2Fcached_img%2Fupload%2F2022%2F04%2F29%2F22%2F15d102bf10829eb7d212c7e0af92689b.jpg&type=a340" width="200px" height="300px" alt="카리나 진짜예쁨">
+        </a>
+    </div>
+    <h2>리스트(ol-순서가 있는, ul - 순서가 없는 리트스)</h2>
+    <ol style="list-style-type: upper-roman;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ol>
+
+    <ul style="list-style-type: square;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ul>    
+
+    <h2>테이블 예제</h2>
+    <table border="1" style="border-collapse: collapse;">
+        <caption>테이블명</caption>
+        <thead>
+            <tr>
+                <th>컬럼1</th>
+                <th>컬럼2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- tr안의 데이터는 for문으로 데이터베이스에서 가져온다다 -->
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+            </tr>
+            <tr>
+                <td>내용A</td>
+                <td>내용B</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <h2>테이블 만들기 실습습</h2> -->
+    <!-- 테이블명 : post, 컬럼: id, title contents, author_email-->
+
+    <table border="3" style="border-collapse: collapse; color: rgb(244, 9, 142);">
+        <caption style="font-size: 30px;"><b>post</b></caption>
+        <thead style="color: red;">
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>contents</th>
+                <th>author_id</th>
+            </tr>
+        </thead>
+        <tbody style="color: orange;">
+            <tr>
+                <th>choi1</th>
+                <th>title1</th>
+                <th>contents1</th>
+                <th>author_id1</th>
+            </tr>
+            <tr>
+                <th>choi2</th>
+                <th>title2</th>
+                <th>contents2</th>
+                <th>author_id2</th>
+            </tr>
+            <tr>
+                <th>choi3</th>
+                <th>title3</th>
+                <th>contents3</th>
+                <th>author_id3</th>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+        
+</body>
+</html>
