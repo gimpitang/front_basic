@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js callbackFunction</title>
+</head>
+<body>
+    <button onclick="basicFunction()">일반함수 예제</button><br><br>
+    <button onclick="callbackFunction1()">콜백함수 예제1</button><br><br>
+    <button onclick="callbackFunction2()">콜백함수 예제2(동기적실행)</button><br><br>
+    <button onclick="callbackFunction3()">콜백함수 예제3(비동기실행)</button><br><br>
+    <script>
+        function basicFunction(){
+            alert("hello world")
+        }
+        function callbackFunction1(){
+            userInput((a)=>{console.log(a)}); //function(){console.log("hello world")} 이 부분이 콜백함수가 됨.
+        }
+        //      아래의 ("hongildong") 이게 callbackFunction1 의 a에 들어간다
+        function userInput(callback){
+            callback("hongildong");
+        }
+        // 아래의 foreach문도 사실은 callback 함수임...ㄷㄷ;;
+        function callbackFunction2(){
+            const numbers =[1,2,3,4,5];
+            numbers.forEach((a)=>console.log(a));
+            //      동기적 실행 : 27행의 구문이 완료되기 전에는 29행은 실행되징 않음.
+            //      일부의 경우에는(function) 비동기적으로 구동한다.
+            console.log("hello world");
+        }
+        function callbackFunction3(){
+            //      setTimeOut 함수는 js의 대표적인 비동기 함수 중 하나(+콜백함수처리)
+            // setTimeout(콜백함수, 시간(ms));
+            setTimeout(()=>console.log("hello world 1"), 2000);
+            console.log("hello world2")
+            console.log("hello world3")
+        }
+    </script>
+</body>
+</html>

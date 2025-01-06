@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js practice</title>
+</head>
+<body>
+    <h2>계산 프로그램 구현</h2>
+    <div>
+        사칙 연산 선택
+        <select id="select">
+            <option value="add">덧셈</option>
+            <option value="extract">뺄셈</option>
+            <option value="multiple">곱셈</option>
+            <option value="divided">나눗셈</option>
+
+        </select><br>
+        <input type="text1" id ="first"><br>
+        <input type="text2" id ="second"><br>
+        <button onclick="calculator()">연산실행</button>
+    </div>
+    <div id = "result">결과값</div>
+
+    <script>
+        function calculator(){
+            const what = document.getElementById("select").value;
+            const first = Number(document.getElementById("first").value);
+            const second = Number(document.getElementById("second").value);
+            
+            if(what=="add"){
+                document.getElementById("result").innerHTML=first+second;
+            }else if(what=="extract"){
+                document.getElementById("result").innerHTML=first-second;
+            }else if(what=="multiple"){
+                document.getElementById("result").innerHTML=first*second;
+            }else if(what=="divided"){
+                if(second==0){
+                    alert("undifine");
+                }else{
+                    document.getElementById("result").innerHTML=first/second;
+                }
+        
+            }
+        }
+    </script>
+</body>
+</html>
