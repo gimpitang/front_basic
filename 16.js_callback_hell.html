@@ -1,0 +1,66 @@
+<!-- 1/7(화) 강의 시작 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback hell 콜백지옥</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js">
+        
+    </script>
+</head>
+<body>
+    <button onclick="callBackHell()">콜백지옥 버튼</button> 
+    <script>
+        // 동기적 자
+        function callBackHell(){
+            
+            $(document).ready(function(){ // html코드가 다 뿌려지기 전까지는 실행 안하겠다
+            $.ajax({        // 외부 서버에 정보를 요청하는 함수
+                url: 'https://jsonplaceholder.typicode.com/posts/1' ,
+                type: 'GET',
+                dataType: 'json',
+                success: function(a){
+                    //      ajax와 같은 서버 데이터 호출 함수는 response를 parsing 까지 진행
+                    console.log("a : ",a); //       ,대신 +를 쓰면 하나의 객체와 문자열로 인식하여 object Object로 나옴
+                    $.ajax({
+                        url: 'https://jsonplaceholder.typicode.com/posts/1' ,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(b){
+                        
+                            console.log("b : ",b);
+                            $.ajax({
+                            url: 'https://jsonplaceholder.typicode.com/posts/1' ,
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(c){
+                            
+                                console.log("c : ",c);
+                            },
+                            error: function(e){ 
+                                console.log(e);
+                            }
+
+                            })
+                        },
+                        error: function(e){ 
+                            console.log(e);
+                        }
+
+                    })
+                },
+                error: function(e){ 
+                    console.log(e);
+                }
+
+            })
+        });
+
+
+
+        console.log("hello world")  
+        }
+    </script>
+</body>
+</html>

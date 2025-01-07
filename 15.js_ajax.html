@@ -6,6 +6,8 @@
     <title>js ajax</title>
     <!-- jquery 프레임워크 안에 ajax함수가 존재재 -->
     <script src="https://code.jquery.com/jquery-3.7.0.js">
+    // 1/6(월) 강의 끝
+
 
     </script>
 </head>
@@ -16,7 +18,7 @@
 
             
             $(document).ready(function(){ // html코드가 다 뿌려지기 전까지는 실행 안하겠다
-            $.ajax({
+            $.ajax({        // 외부 서버에 정보를 요청하는 함수
                 url: 'https://jsonplaceholder.typicode.com/posts/1' ,
                 type: 'GET',
                 dataType: 'json',
@@ -30,9 +32,9 @@
             })
         });
         console.log("hello world")   
-        // 1/6(월) 강의 끝끝
+        // 1/6(월) 강의 끝
 
-
+            
 
 
         }

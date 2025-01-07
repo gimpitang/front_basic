@@ -1,0 +1,60 @@
+<!-- 1/7(화) 강의 시작 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback hell 콜백지옥_await로 해결</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js">
+        
+    </script>
+</head>
+<body>
+    <script>
+        
+        async function callBackHell(){
+        // async 함수 내에서 await 키워드를 통해 동기적 실행을 보장함
+            
+        await $.ajax({       
+            url: 'https://jsonplaceholder.typicode.com/posts/1' ,
+            type: 'GET',
+            dataType: 'json',
+            success: function(a){
+                console.log("a : ",a);
+            },
+            error: function(e){ 
+                console.log(e);
+            }
+        })
+
+        await $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/posts/1' ,
+            type: 'GET',
+            dataType: 'json',
+            success: function(b){
+                console.log("b : ",b);
+            },
+            error: function(e){ 
+                console.log(e);
+            }
+        })
+
+        await $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/posts/1' ,
+            type: 'GET',
+            dataType: 'json',
+            success: function(c){
+                console.log("c : ",c);
+            },
+            error: function(e){ 
+                console.log(e);
+            }
+        })
+
+    };
+    callBackHell();
+    console.log("hello world")  
+    
+    </script>
+</body>
+</html>
